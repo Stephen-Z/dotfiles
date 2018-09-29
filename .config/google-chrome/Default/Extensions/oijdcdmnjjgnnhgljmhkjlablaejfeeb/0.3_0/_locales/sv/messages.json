@@ -1,0 +1,5 @@
+{
+   "application_description": {
+      "message": "Gör det möjligt att generera en QR-kod för den aktuella sidan och skanna en QR-kod med hjälp av webbkameran."
+   }
+}

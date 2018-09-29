@@ -1,0 +1,19 @@
+2018/09/08-21:47:03.881 20843 Reusing MANIFEST /home/stephen/.config/chromium/Default/IndexedDB/http_192.168.0.5_7004.indexeddb.leveldb/MANIFEST-000001
+2018/09/08-21:47:59.152 21651 Level-0 table #5: started
+2018/09/08-21:47:59.383 21651 Level-0 table #5: 18625020 bytes OK
+2018/09/08-21:47:59.465 21651 Delete type=0 #3
+2018/09/08-21:48:00.595 21651 Level-0 table #7: started
+2018/09/08-21:48:00.753 21651 Level-0 table #7: 14889867 bytes OK
+2018/09/08-21:48:00.795 21651 Delete type=0 #4
+2018/09/08-21:48:00.798 21651 Compacting 1@1 + 1@2 files
+2018/09/08-21:48:00.883 21651 Generated table #8@1: 18 keys, 2216563 bytes
+2018/09/08-21:48:01.073 21651 Generated table #9@1: 1 keys, 16408023 bytes
+2018/09/08-21:48:01.233 21651 Generated table #10@1: 1 keys, 14889690 bytes
+2018/09/08-21:48:01.283 21651 Generated table #11@1: 8 keys, 740 bytes
+2018/09/08-21:48:01.283 21651 Compacted 1@1 + 1@2 files => 33515016 bytes
+2018/09/08-21:48:01.323 21651 compacted to: files[ 0 0 4 0 0 0 0 ]
+2018/09/08-21:48:01.323 21651 Delete type=2 #7
+2018/09/08-21:48:01.327 21651 Delete type=2 #5
+2018/09/08-21:48:12.174 21651 Level-0 table #13: started
+2018/09/08-21:48:12.274 21651 Level-0 table #13: 4275583 bytes OK
+2018/09/08-21:48:12.295 21651 Delete type=0 #6

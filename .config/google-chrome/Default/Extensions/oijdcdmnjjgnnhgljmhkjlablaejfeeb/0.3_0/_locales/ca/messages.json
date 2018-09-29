@@ -1,0 +1,5 @@
+{
+   "application_description": {
+      "message": "Permet generar un codi QR de la pàgina actual i escanejar un codi QR amb la càmera web."
+   }
+}

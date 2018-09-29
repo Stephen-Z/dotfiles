@@ -1,0 +1,24 @@
+{
+   "browser_action": {
+      "default_icon": {
+         "19": "images/icon19.png",
+         "38": "images/icon38.png"
+      },
+      "default_popup": "index.html",
+      "default_title": "The QR Code Extension"
+   },
+   "default_locale": "en",
+   "description": "__MSG_application_description__",
+   "icons": {
+      "128": "images/icon128.png",
+      "16": "images/icon16.png",
+      "48": "images/icon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCRCPCCycx77gMapPsqkWbjGKySeEtvQFfRaxTPt+KmVde1VUR6mb4TFclIrXNhtLiY6S43TU1QO/f8QIg0W2Bs6n4+EuUUAXEq6SwGXyRascNC132m+sBkqZzxv7T4MnPGXSrtrCQ7KWqoHgzmXn4mPGqLBwgyMmgWWTAwWWTbBQIDAQAB",
+   "manifest_version": 2,
+   "name": "The QR Code Extension",
+   "optional_permissions": [  ],
+   "permissions": [ "activeTab" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.3"
+}

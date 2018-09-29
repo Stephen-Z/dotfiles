@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+<title>QR Code Scanner API iFrame</title>
+<style type="text/css">
+    body, html {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+    #scanner {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+    }
+</style>
+<script src="components/barcode.js/w69b.qrcode.min.js"></script>
+</head>
+<body>
+<div id="scanner"></div>
+<script type="text/javascript">
+    (function() {
+        var ContinuousScanner = w69b.qr.ui.ContinuousScanner;
+        var scanner, scannerEl;
+        var parent = window.parent;
+
+        function isAllowedHost(hostname) {
+            return (hostname == 'localhost' ||
+                    hostname == 'www.the-qrcode-generator.com');
+        }
+
+        /**
+         * barcode.js decoded a qr code.
+         */
+        function onDecoded(result) {
+            sendToParent('decoded', result);
+        }
+
+        /**
+         * @param {string=} type message type.
+         * @param {*} opt_data optional payload.
+         */
+        function sendToParent(type, opt_data) {
+            parent.postMessage({
+                'msgtype': type,
+                'data': opt_data}, '*');
+        }
+
+        /**
+         * Message from host window.
+         */
+        function onMessage(event) {
+            var msgtype = event.data['msgtype'];
+            var data = event.data['data'];
+            switch (msgtype) {
+                case 'setStopped':
+                    scanner.setStopped(data);
+                    break;
+                case 'dispose':
+                    dispose();
+                    break;
+            }
+
+        }
+
+        function dispose() {
+            if (scanner) {
+                scanner.dispose();
+                scanner = null;
+            }
+        }
+
+
+        function init() {
+            w69b.qr.DecodeInWorkerHelper.setWorkerUrl(
+                    'components/barcode.js/w69b.qrcode.decodeworker.min.js');
+            w69b.qr.DecodeInWorkerHelper.setIconvUrl(
+                    '../iconv.js/iconv.js');
+            scannerEl = document.getElementById('scanner');
+
+            if (parent == window || !isAllowedHost(window.location.hostname)) {
+                console.log('Invalid usage');
+                sendToParent('error', 'invalid_usage');
+                return;
+            }
+
+            if (ContinuousScanner.isSupported()) {
+                scanner = new ContinuousScanner();
+                scanner.setDecodedCallback(onDecoded);
+                scanner.render(scannerEl);
+                window.addEventListener('message', onMessage, false);
+                window.addEventListener('unload', dispose, false);
+            } else {
+                sendToParent('error', 'not_supported');
+            }
+        }
+
+        init();
+    })();
+</script>
+</body>
+</html>

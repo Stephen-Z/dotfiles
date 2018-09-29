@@ -1,0 +1,5 @@
+{
+   "application_description": {
+      "message": "Permet de générer un QR code pour la page courante et scanner un code QR à l'aide de la webcam."
+   }
+}
