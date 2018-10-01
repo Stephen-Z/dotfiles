@@ -1,0 +1,10 @@
+[Unit]
+Description=Shadowsocks_sslocal
+After=dbus.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sslocal -c /home/stephen/usa.json 
+
+[Install]
+WantedBy=multi-user.target
