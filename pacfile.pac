@@ -4,6 +4,7 @@
 var proxy = "SOCKS5 127.0.0.1:1080;";
 
 var rules = [
+"archlinux.org",
 "vuejs.org",
 "reddit.com",
 "docs.xfce.org",

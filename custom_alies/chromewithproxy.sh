@@ -1,1 +1,1 @@
-google-chrome-stable --proxy-pac-url=file:///home/stephen/pacfile.pac --enable-native-gpu-memory-buffers
+google-chrome-stable --proxy-pac-url=file:///home/stephen/dotfiles/pacfile.pac --enable-native-gpu-memory-buffers

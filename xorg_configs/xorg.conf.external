@@ -1,0 +1,45 @@
+Section "ServerLayout"
+    Identifier "layout"
+    Screen 0 "nvidia"
+    #Inactive "intel"
+EndSection
+
+Section "Device"
+    Identifier "nvidia"
+    Driver "nvidia"
+    BusID "PCI:1:0:0"
+EndSection
+
+Section "Monitor"
+    Identifier     "Monitor0"
+    VendorName     "Unknown"
+    ModelName      "LG Electronics LG ULTRAWIDE"
+    HorizSync       90.0 - 90.0
+    VertRefresh     75.0
+    Option         "DPMS"
+EndSection
+
+Section "Screen"
+    Identifier "nvidia"
+    Device "nvidia"
+    Monitor "Monitor0"
+    # Uncomment this line if your computer has no display devices connected to
+    # the NVIDIA GPU.  Leave it commented if you have display devices
+    # connected to the NVIDIA GPU that you would like to use.
+    #Option "UseDisplayDevice" "none"
+EndSection
+
+#Section "Device"
+#    Identifier "intel"
+#    Driver "intel"
+#EndSection
+
+#Section "Screen"
+#    Identifier "intel"
+#    Device "intel"
+#EndSection
+
+Section "Files"
+	ModulePath "/usr/lib/nvidia/xorg/"
+	ModulePath "/usr/lib/xorg/modules/"
+EndSection
